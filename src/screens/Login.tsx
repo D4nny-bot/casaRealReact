@@ -41,9 +41,9 @@ class Login extends React.Component<MyProps, any> {
   
   }
   render() {
-    return <ImageBackground style={styles.body} source={require("../../assets/img/fondo.jpg")}>
+    return <ImageBackground style={styles.body} source={require("../../assets/img/FONDOREALCASA.png")}>
         <View style={styles.centerObjects}>
-          <Image style={styles.logo} source={require("../../assets/img/casaReal.jpg")}/>
+          <Image style={styles.logo} source={require("../../assets/img/REALCASAB.png")}/>
         </View>
         <View style={styles.containerTextfield}>
           <TextInput
@@ -82,14 +82,16 @@ const styles = StyleSheet.create({
     flex:1
   },
   logo: {
-    width: "50%",
-    height: "50%"
+    marginTop: 90,
+    width: "90%",
+    height: "55%"
   },
   containerTextfield: {
     padding: 10,
   },
   centerObjects: {
-    alignItems: "center"
+    alignItems: "center",
+    marginBottom: -150,
   },
   marginTop: {
     marginTop: 10
