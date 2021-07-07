@@ -1,7 +1,8 @@
 import React, { Component } from "react";
 import { NavigationContainer } from '@react-navigation/native';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
-import Clients from "./users/Clients";
+import Users from "./users/Users";
+import Clients from "./clients/Clients";
 import Order from "./Order";
 import Reports from "./Reports";
 import Icons from "react-native-vector-icons/AntDesign";
@@ -25,6 +26,13 @@ class MainApp extends Component {
                     return <Icons name="adduser" size={23} color={MyColors.thirth} />;
                   }
                 }
+                case 'Clientes': {
+                    if (focused) {
+                      return <Icons name="deleteusergroup" size={23} color={MyColors.secondary} />;
+                    } else {
+                      return <Icons name="deleteusergroup" size={23} color={MyColors.thirth} />;
+                    }
+                }
                 case 'Pedidos': {
                   if (focused) {
                     return <Icons name="exception1" size={23} color={MyColors.secondary}/>;
@@ -47,7 +55,8 @@ class MainApp extends Component {
             },
           })}
           >
-            <Tab.Screen name="Usuarios" component={Clients} />
+            <Tab.Screen name="Usuarios" component={Users} />
+            <Tab.Screen name="Clientes" component={Clients} />
             <Tab.Screen name="Pedidos" component={Order} />
             <Tab.Screen name="Reportes" component={Reports} />
           </Tab.Navigator>

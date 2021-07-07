@@ -97,7 +97,7 @@ class RegisterUsers extends Component<MyProps, Mystate> {
         if (this.context.uriphoto != "") {
             return <Avatar.Image size={150} source={{uri: this.context.uriphoto}} />
         } else {
-            return <Avatar.Image size={150} source={require('../../../assets/img/batman.png')} />
+            return <Avatar.Image size={150} source={require('../../../assets/img/music.jpg')} />
             
         }
     }
