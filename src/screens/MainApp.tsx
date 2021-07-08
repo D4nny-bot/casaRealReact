@@ -3,6 +3,7 @@ import { NavigationContainer } from '@react-navigation/native';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import Users from "./users/Users";
 import Clients from "./clients/Clients";
+import ListClients from './clients/ListClients';
 import Order from "./Order";
 import Reports from "./Reports";
 import Icons from "react-native-vector-icons/AntDesign";
@@ -43,11 +44,11 @@ class MainApp extends Component {
                 case 'Reportes': {
                   if (focused) {
                     return (
-                      <Icons name="table" size={23} color={MyColors.secondary} />
+                      <Icons name="barschart" size={23} color={MyColors.secondary} />
                     );
                   } else {
                     return (
-                      <Icons name="table" size={23} color={MyColors.thirth} />
+                      <Icons name="barschart" size={23} color={MyColors.thirth} />
                     );
                   }
                 }
