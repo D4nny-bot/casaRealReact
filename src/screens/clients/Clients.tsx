@@ -10,7 +10,7 @@ class Clients extends Component {
     return (
     
             <TopTab.Navigator>
-                <TopTab.Screen name = "ClientR" component={ClientsRegular}></TopTab.Screen>
+                <TopTab.Screen name ="ClientR" component={ClientsRegular}></TopTab.Screen>
                 <TopTab.Screen name="ClientP" component={ClientPotencial}></TopTab.Screen>
                 <TopTab.Screen name="Agenda" component={AgendaNegocio}></TopTab.Screen>
           </TopTab.Navigator>
