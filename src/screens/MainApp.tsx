@@ -5,7 +5,7 @@ import Users from "./users/Users";
 import Clients from "./clients/Clients";
 import ListClients from './clients/ListClients';
 import Order from "./Order";
-import Reports from "./Reports";
+import ReportsNavigation from "../navigation/ReportsNavigation";
 import Icons from "react-native-vector-icons/AntDesign";
 import MyColors from "../color/MyColors"
 
@@ -59,7 +59,7 @@ class MainApp extends Component {
             <Tab.Screen name="Usuarios" component={Users} />
             <Tab.Screen name="Clientes" component={Clients} />
             <Tab.Screen name="Pedidos" component={Order} />
-            <Tab.Screen name="Reportes" component={Reports} />
+            <Tab.Screen name="Reports" component={ReportsNavigation} />
           </Tab.Navigator>
         </NavigationContainer>
       )
