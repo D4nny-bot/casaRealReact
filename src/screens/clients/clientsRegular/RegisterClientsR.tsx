@@ -1,14 +1,17 @@
 import React, { Component } from "react";
 import {View, Text, StyleSheet} from "react-native";
-import {TextInput, Button, Avatar} from "react-native-paper";
-
+import {TextInput, Button, Avatar, RadioButton} from "react-native-paper";
+import AppContext from "../../../context/AppContext"
+import {Types} from "../../../context/ContantTypes";
+import axios from "axios";
 
 class RegisterClientsR extends Component {
   render() {
+    
     return (
       <View style= {styles.container}>
           <TextInput style={styles.txtStyles}
-          label="Nombres"
+          label="nom"
           onChangeText={text => {  
               this.setState({
                   username: text
@@ -35,6 +38,9 @@ class RegisterClientsR extends Component {
                   repassword: text
               })
           }}/>
+         
+          
+
           <TextInput style={styles.txtStyles}
           label="Telefono"
           onChangeText={text => {   
@@ -42,6 +48,7 @@ class RegisterClientsR extends Component {
                   repassword: text
               })
           }}/>
+          
           <Button style={styles.txtStyles} icon="camera" mode="contained" onPress={() => {
               
           }}>
@@ -69,7 +76,8 @@ const styles = StyleSheet.create({
   },
   avatarView: {
       alignItems: "center"
-  }
+  },
+  
 }   
 );
 export default RegisterClientsR;

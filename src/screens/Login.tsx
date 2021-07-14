@@ -1,100 +1,116 @@
-import React from "react";
-import {View, Image, StyleSheet, ImageBackground, Alert} from "react-native";
+import React, { Component } from "react";
+import {View, Text, Image, StyleSheet, ImageBackground, Alert} from "react-native";
 import {TextInput, Button} from "react-native-paper";
 import AppContext from "../context/AppContext"
 import { StackNavigationProp } from "@react-navigation/stack";
 import MainApp from './MainApp';
 import { NavigationContainer } from "@react-navigation/native";
+import {NavigationScreenProp} from "react-navigation";
+import axios, { AxiosResponse } from "axios";
+import { Types } from "../context/ContantTypes";
 
+interface DateUsers {
+  _id: string,
+  username: String,
+  password: String,
+  //visible: boolean,
+  token: string,
+  type: string
+}
+interface ServerResponse {
+serverResponse:Array<DateUsers>
+}
+interface ItemData {
+item: DateUsers
+}
+interface Mystate {
 
-interface MyState {
-      username: String,
-      password: String,
-      visible: boolean
+email: string,
+password: string,
 }
 interface MyProps {
-    navigation: StackNavigationProp<any, any>
+navigation: StackNavigationProp<any, any>
 }
 export interface IGoogleUser {
-  photo: string
-  email: string
-  familyName?: string
-  givenName: string
-  name: string
-  id: string
+photo: string
+email: string
+familyName?: string
+givenName: string
+name: string
+id: string
 }
 class Login extends React.Component<MyProps, any> {
-  static contextType = AppContext;
-  constructor(props: any) {
-    super(props);
-    this.state = {
-      username: "",
-      password: "",
-      visible: true
-    }
-  }
-  login() {
-    
-    if (true) {
-      this.props.navigation.navigate("main");
-    }    
-  
-  }
-  render() {
-    return <ImageBackground style={styles.body} source={require("../../assets/img/FONDOREALCASA.png")}>
-        <View style={styles.centerObjects}>
-          <Image style={styles.logo} source={require("../../assets/img/REALCASAB.png")}/>
-        </View>
-        <View style={styles.containerTextfield}>
-          <TextInput
-            label="Username"
-            
-            onChangeText={(text) => {
-              this.setState({
-                username: text
-              })
-            }}
-          />
-          <TextInput style={styles.marginTop}
-            label="Password"
-            secureTextEntry={this.state.visible}
-            right={<TextInput.Icon name="eye" onPress={() => {
-              this.setState({
-                visible: !this.state.visible
-              })
-            }}/>}
-            onChangeText={(text) => {
-              this.setState({
-                password: text
-              })
-            }}
-          />
-          <Button style={styles.marginTop}  mode="contained" onPress ={() => {this.login()}}>
-            Login
-          </Button>
+static contextType = AppContext;
+constructor(props: any) {
+super(props);
+this.state = {
+  username: "",
+  password: "",
+  visible: true
+}
+}
+login() {
+
+if (true) {
+  this.props.navigation.navigate("main");
+}    
+
+}
+render() {
+return <ImageBackground style={styles.body} source={require("../../assets/img/FONDOREALCASA.png")}>
+    <View style={styles.centerObjects}>
+      <Image style={styles.logo} source={require("../../assets/img/REALCASAB.png")}/>
+    </View>
+    <View style={styles.containerTextfield}>
+      <TextInput
+        label="Username"
         
-        </View>
-    </ImageBackground>
-  }
+        onChangeText={(text) => {
+          this.setState({
+            username: text
+          })
+        }}
+      />
+      <TextInput style={styles.marginTop}
+        label="Password"
+        secureTextEntry={this.state.visible}
+        right={<TextInput.Icon name="eye" onPress={() => {
+          this.setState({
+            visible: !this.state.visible
+          })
+        }}/>}
+        onChangeText={(text) => {
+          this.setState({
+            password: text
+          })
+        }}
+      />
+      <Button style={styles.marginTop}  mode="contained" onPress ={() => {this.login()}}>
+        Login
+      </Button>
+    
+    </View>
+</ImageBackground>
+}
 }
 const styles = StyleSheet.create({
-  body: {
-    flex:1
-  },
-  logo: {
-    marginTop: 90,
-    width: "90%",
-    height: "55%"
-  },
-  containerTextfield: {
-    padding: 10,
-  },
-  centerObjects: {
-    alignItems: "center",
-    marginBottom: -150,
-  },
-  marginTop: {
-    marginTop: 10
-  }
+body: {
+flex:1
+},
+logo: {
+marginTop: 90,
+width: "90%",
+height: "55%"
+},
+containerTextfield: {
+padding: 10,
+},
+centerObjects: {
+alignItems: "center",
+marginBottom: -150,
+},
+marginTop: {
+marginTop: 10
+}
 });
 export default Login;

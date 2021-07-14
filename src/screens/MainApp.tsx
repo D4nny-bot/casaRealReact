@@ -59,7 +59,7 @@ class MainApp extends Component {
             <Tab.Screen name="Usuarios" component={Users} />
             <Tab.Screen name="Clientes" component={Clients} />
             <Tab.Screen name="Pedidos" component={Order} />
-            <Tab.Screen name="Reports" component={ReportsNavigation} />
+            <Tab.Screen name="Reportes" component={ReportsNavigation} />
           </Tab.Navigator>
         </NavigationContainer>
       )

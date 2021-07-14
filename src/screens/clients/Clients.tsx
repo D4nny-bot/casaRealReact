@@ -9,6 +9,7 @@ import ClientPotencial from  './clientsPotencial/ClientsPotencial';
 import AgendaNegocio from './agenda/AgendaNegocio';
 import ListClients from './ListClients';
 import registerClientsR from './clientsRegular/RegisterClientsR';
+import registerClientsP from './clientsPotencial/RegisterClientsP';
 
 //const MORE_ICON = Platform.OS === 'ios' ? 'dots-horizontal' : 'dots-vertical';
 var Stack = createStackNavigator();
@@ -38,7 +39,7 @@ class Clients extends Component {
                 <Appbar.Content title="Registro de Clientes" subtitle={'Regulares'} />
              </Appbar.Header>}
             )}/>
-            <Stack.Screen name="RegisterClientsP" component={registerClientsR} options={() => (
+            <Stack.Screen name="RegisterClientsP" component={registerClientsP} options={() => (
               {header: (navigate) => <Appbar.Header>
                 <Appbar.BackAction onPress={() => {
                   navigate.navigation.pop();
