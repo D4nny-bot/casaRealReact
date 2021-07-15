@@ -11,7 +11,7 @@ interface ItemUser{
     telephone?: string,
     email?: string,
     //probability?: number,
-    address?: string,
+    zona?: string,
     type?: string
     
 }
@@ -21,7 +21,7 @@ interface Mystate {
     telephone: string,
     email: string,
     //probability: number,
-    address: string,
+    zona: string,
     type: string,
     isload: boolean,
     pathImg?: string
@@ -42,7 +42,7 @@ class RegisterClientsP extends Component<MyProps, Mystate> {
         super(props);
         this.state = {
             isload: false,
-            fullname: "", surname: "", telephone: "", email:"", address:"", type: "potencial"
+            fullname: "", surname: "", telephone: "", email:"", zona:"", type: "potencial"
         }
     }
     async checkandSendData() {
@@ -135,7 +135,7 @@ class RegisterClientsP extends Component<MyProps, Mystate> {
           label="Dirección exacta"
           onChangeText={text => {   
               this.setState({
-                  address: text
+                  zona: text
               })
           }}/>
           
